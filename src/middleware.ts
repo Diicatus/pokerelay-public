@@ -9,7 +9,7 @@ export function middleware(request: NextRequest) {
     const [user, password] = atob(authValue).split(':')
 
     // Cambia 'admin' y 'pokerelay' por los que tú quieras
-    if (user === 'admin' && password === 'pokerelay') {
+    if (user === 'dicatus' && password === 'Super1997Ra**') {
       return NextResponse.next()
     }
   }
