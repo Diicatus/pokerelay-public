@@ -1,6 +1,6 @@
 {
-    "name": "Pokerelay",
-    "short_name": "Pokerelay",
+    "name": "PokeRelay",
+    "short_name": "PokeRelay",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#facc15",

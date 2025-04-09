@@ -1,13 +1,26 @@
 self.addEventListener('install', event => {
-    console.log('Service Worker installing.')
+    event.waitUntil(
+      caches.open('static-v1').then(cache => {
+        return cache.addAll([
+          '/',
+          '/splash-screen.png',
+          '/icon-192.png',
+          '/icon-512.png'
+        ])
+      })
+    )
     self.skipWaiting()
   })
   
   self.addEventListener('activate', event => {
-    console.log('Service Worker activating.')
+    event.waitUntil(self.clients.claim())
   })
   
   self.addEventListener('fetch', event => {
-    event.respondWith(fetch(event.request).catch(() => caches.match(event.request)))
+    event.respondWith(
+      caches.match(event.request).then(response => {
+        return response || fetch(event.request)
+      })
+    )
   })
   
