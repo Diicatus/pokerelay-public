@@ -1,8 +1,9 @@
 import './globals.css'
 import Menu from './components/Menu'
+import SplashScreen from './components/SplashScreen'
 
 export const metadata = {
-  title: 'Pokerelay',
+  title: 'PokeRelay',
   description: 'App de intercambios de cartas Pokémon TCG',
 }
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="theme-color" content="#facc15" />
       </head>
       <body className="relative min-h-screen pb-16">
+        <SplashScreen />
         {children}
         <Menu />
         <script
@@ -38,4 +40,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   )
 }
-
