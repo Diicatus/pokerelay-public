@@ -1,5 +1,4 @@
-// Middleware desactivado para versión pública
+// Middleware desactivado para la versión pública
 export function middleware() {
   return
 }
-Desactivado middleware para versión pública
