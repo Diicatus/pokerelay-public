@@ -1,27 +1,5 @@
-import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'
-
-export function middleware(request: NextRequest) {
-  const basicAuth = request.headers.get('authorization')
-
-  if (basicAuth) {
-    const authValue = basicAuth.split(' ')[1]
-    const [user, password] = atob(authValue).split(':')
-
-    // Cambia 'admin' y 'pokerelay' por los que tú quieras
-    if (user === 'dicatus' && password === 'Super1997Ra**') {
-      return NextResponse.next()
-    }
-  }
-
-  return new NextResponse('Auth Required', {
-    status: 401,
-    headers: {
-      'WWW-Authenticate': 'Basic realm="Secure Area"',
-    },
-  })
+// Middleware desactivado para versión pública
+export function middleware() {
+  return
 }
-
-export const config = {
-  matcher: '/:path*',
-}
+Desactivado middleware para versión pública
